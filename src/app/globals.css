@@ -111,3 +111,22 @@ body {
 .hoshi-win  { background: rgba(74,222,128,0.15); color: #4ade80; border: 1px solid rgba(74,222,128,0.4); }
 .hoshi-lose { background: rgba(248,113,113,0.15); color: #f87171; border: 1px solid rgba(248,113,113,0.4); }
 .hoshi-rest { background: rgba(90,122,154,0.15); color: #6a8aad; border: 1px solid rgba(90,122,154,0.3); }
+
+/* ─── サイドバー：モバイル/デスクトップ切り替え ─── */
+.sidebar-panel {
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.sidebar-panel.sidebar-open {
+  transform: translateX(0);
+}
+@media (min-width: 768px) {
+  .sidebar-panel {
+    transform: translateX(0) !important;
+  }
+}
+
+/* ─── モバイル：タップ操作改善 ─── */
+@media (max-width: 767px) {
+  .recharts-responsive-container { touch-action: pan-y; }
+}

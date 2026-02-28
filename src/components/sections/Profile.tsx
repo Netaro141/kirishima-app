@@ -58,7 +58,7 @@ export default function Profile() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
             <div>
               <h3 className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#d4a017" }}>基本情報</h3>
               <InfoRow label="本名" value={profile.realName} />
@@ -82,7 +82,7 @@ export default function Profile() {
       </div>
 
       {/* ── スタイル & 得意技 ── */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="rounded-2xl p-6" style={{ background: "#071a35", border: "1px solid #0f3060" }}>
           <h3 className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#d4a017" }}>相撲スタイル</h3>
           <p className="text-sm leading-relaxed" style={{ color: "#8aaad0" }}>{profile.style}</p>

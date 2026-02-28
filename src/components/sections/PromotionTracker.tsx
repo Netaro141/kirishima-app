@@ -62,7 +62,7 @@ export default function PromotionTracker() {
           style={{ background: "radial-gradient(circle, rgba(212,160,23,0.08) 0%, transparent 70%)" }} />
 
         <div className="relative z-10">
-          <div className="flex items-start justify-between mb-6">
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-6">
             <div>
               <div className="text-xs font-bold tracking-[0.2em] mb-2" style={{ color: "#d4a017" }}>
                 大関復帰条件 — 三役3場所合計{OZEKI_RETURN_THRESHOLD}勝
@@ -178,7 +178,7 @@ export default function PromotionTracker() {
       </div>
 
       {/* ── 3場所カード ── */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {promotionTrackerData.map((d, i) => (
           <div key={d.basho} className="rounded-2xl p-5 relative overflow-hidden"
             style={

@@ -86,16 +86,16 @@ export default function KimariteAnalysis() {
         <h3 className="font-bold mb-5" style={{ color: "#e8dfc8" }}>決まり手一覧</h3>
         <div className="space-y-3">
           {kimariteData.map((item, idx) => (
-            <div key={item.technique} className="flex items-center gap-4">
-              <span className="w-5 text-sm font-mono text-right" style={{ color: "#2a4a6a" }}>{idx + 1}</span>
-              <div className="w-4 h-4 rounded-sm flex-shrink-0" style={{ background: PALETTE[idx % PALETTE.length] }} />
-              <span className="w-20 text-sm font-bold" style={{ color: "#c0d8f0" }}>{item.technique}</span>
-              <div className="flex-1 h-2.5 rounded-full overflow-hidden" style={{ background: "#030e1f", border: "1px solid #0f3060" }}>
+            <div key={item.technique} className="flex items-center gap-2 md:gap-4">
+              <span className="w-4 text-xs font-mono text-right flex-shrink-0" style={{ color: "#2a4a6a" }}>{idx + 1}</span>
+              <div className="w-3 h-3 md:w-4 md:h-4 rounded-sm flex-shrink-0" style={{ background: PALETTE[idx % PALETTE.length] }} />
+              <span className="w-16 md:w-20 text-xs md:text-sm font-bold flex-shrink-0" style={{ color: "#c0d8f0" }}>{item.technique}</span>
+              <div className="flex-1 h-2 md:h-2.5 rounded-full overflow-hidden" style={{ background: "#030e1f", border: "1px solid #0f3060" }}>
                 <div className="h-full rounded-full transition-all duration-700"
-                  style={{ width: `${item.percentage}%`, background: PALETTE[idx % PALETTE.length], boxShadow: `0 0 6px ${PALETTE[idx % PALETTE.length]}60` }} />
+                  style={{ width: `${item.percentage}%`, background: PALETTE[idx % PALETTE.length] }} />
               </div>
-              <span className="w-12 text-right text-sm font-black" style={{ color: "#e8dfc8" }}>{item.count}回</span>
-              <span className="w-12 text-right text-xs" style={{ color: "#3a5a7a" }}>{item.percentage}%</span>
+              <span className="w-10 md:w-12 text-right text-xs md:text-sm font-black flex-shrink-0" style={{ color: "#e8dfc8" }}>{item.count}回</span>
+              <span className="hidden sm:block w-10 text-right text-xs flex-shrink-0" style={{ color: "#3a5a7a" }}>{item.percentage}%</span>
             </div>
           ))}
         </div>

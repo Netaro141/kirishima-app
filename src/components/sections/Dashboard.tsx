@@ -60,7 +60,7 @@ export default function Dashboard() {
         <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full"
           style={{ background: "radial-gradient(circle, rgba(212,160,23,0.12) 0%, transparent 70%)" }} />
 
-        <div className="relative z-10 flex items-center gap-6">
+        <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
           {/* 家紋風アバター */}
           <div className="w-20 h-20 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-2xl"
             style={{ background: "linear-gradient(135deg, #d4a017 0%, #8b6914 60%, #f0c840 100%)", boxShadow: "0 0 24px rgba(212,160,23,0.4)" }}>
@@ -90,7 +90,7 @@ export default function Dashboard() {
       </div>
 
       {/* ── スタッツグリッド ── */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
         <StatCard label="直近場所" value={`${latest.wins}勝${latest.losses}敗`} sub={`${latest.basho} ${latest.location}`} accent />
         <StatCard label="現在の番付" value={profile.currentRank} sub={profile.stable} />
         <StatCard label="最高位" value={profile.highestRank} sub={`${profile.ozekiPromotion}昇進`} />
@@ -131,7 +131,7 @@ export default function Dashboard() {
         </div>
 
         {/* 3場所の内訳 */}
-        <div className="grid grid-cols-3 gap-3 mt-5">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-5">
           {promotionTrackerData.map((d, i) => (
             <div key={d.basho} className="rounded-xl p-4 text-center"
               style={
@@ -166,7 +166,7 @@ export default function Dashboard() {
       </div>
 
       {/* ── 直近星取表 + 最新ニュース ── */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* 直近星取表 */}
         <div className="rounded-2xl p-6" style={{ background: "#071a35", border: "1px solid #0f3060" }}>
           <h3 className="font-bold mb-1" style={{ color: "#e8dfc8" }}>

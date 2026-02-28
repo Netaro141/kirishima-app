@@ -10,7 +10,7 @@ export default function FamousBouts() {
         <p className="text-sm mt-3" style={{ color: "#3a5a7a" }}>霧島鐵力の印象的な取組を振り返る</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {famousBouts.map((bout) => (
           <div key={bout.id}
             className="rounded-2xl overflow-hidden transition-all duration-300 group"
