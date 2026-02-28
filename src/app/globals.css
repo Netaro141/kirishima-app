@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+:root {
+  --background: #030e1f;
+  --foreground: #e8dfc8;
+
+  /* ── 和の色彩 ── */
+  --kon:    #030e1f;   /* 紺色（深い藍）  */
+  --kon-2:  #071a35;   /* 紺色カード     */
+  --kon-3:  #0c2448;   /* 紺色ホバー     */
+  --ai:     #0f3060;   /* 藍色ボーダー   */
+  --ai-2:   #1a4a80;   /* 藍色ライト     */
+
+  --kin:    #d4a017;   /* 金色           */
+  --kin-2:  #f0c840;   /* 薄金色         */
+  --kin-3:  #8b6914;   /* 濃金色         */
+
+  --cha-1:  #e8dfc8;   /* 薄茶白（主文字）*/
+  --cha-2:  #6a8aad;   /* 鈍青（副文字）  */
+  --cha-3:  #3a5a7a;   /* 深青灰（弱文字）*/
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+
+/* ─── スクロールバー ─── */
+::-webkit-scrollbar        { width: 5px; height: 5px; }
+::-webkit-scrollbar-track  { background: #020a18; }
+::-webkit-scrollbar-thumb  { background: #1a4a80; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #d4a017; }
+
+/* ─── 青海波（seigaiha）パターン ─── */
+.seigaiha {
+  background-image:
+    radial-gradient(circle at 0%   50%, transparent 30%, rgba(212,160,23,0.07) 30%, rgba(212,160,23,0.07) 42%, transparent 42%),
+    radial-gradient(circle at 100% 50%, transparent 30%, rgba(212,160,23,0.07) 30%, rgba(212,160,23,0.07) 42%, transparent 42%),
+    radial-gradient(circle at 50%  0%,  transparent 30%, rgba(212,160,23,0.07) 30%, rgba(212,160,23,0.07) 42%, transparent 42%),
+    radial-gradient(circle at 50% 100%, transparent 30%, rgba(212,160,23,0.07) 30%, rgba(212,160,23,0.07) 42%, transparent 42%);
+  background-size: 28px 28px;
+}
+
+/* ─── 斜め縞（naname）パターン ─── */
+.naname {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0,
+    transparent 5px,
+    rgba(212,160,23,0.05) 5px,
+    rgba(212,160,23,0.05) 6px
+  );
+}
+
+/* ─── 亀甲（kikko）ドットパターン ─── */
+.kikko {
+  background-image: radial-gradient(rgba(212,160,23,0.07) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* ─── 金の輝きアニメーション ─── */
+@keyframes kin-pulse {
+  0%, 100% { opacity: 0.65; }
+  50%       { opacity: 1;    }
+}
+.kin-pulse { animation: kin-pulse 2.4s ease-in-out infinite; }
+
+@keyframes kin-glow {
+  0%, 100% { box-shadow: 0 0 8px rgba(212,160,23,0.25); }
+  50%       { box-shadow: 0 0 20px rgba(212,160,23,0.55); }
+}
+.kin-glow { animation: kin-glow 2.4s ease-in-out infinite; }
+
+/* ─── 金の区切り線 ─── */
+.kin-line {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(212,160,23,0.5), transparent);
+}
+
+/* ─── カード共通スタイル ─── */
+.sumo-card {
+  background: #071a35;
+  border: 1px solid #0f3060;
+  border-radius: 1rem;
+  transition: border-color 0.2s;
+}
+.sumo-card:hover { border-color: rgba(212,160,23,0.35); }
+
+/* ─── セクション見出し装飾 ─── */
+.section-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2.5rem;
+  height: 2px;
+  background: linear-gradient(to right, #d4a017, transparent);
+  border-radius: 9999px;
+}
+
+/* ─── 星取表ドット ─── */
+.hoshi-win  { background: rgba(74,222,128,0.15); color: #4ade80; border: 1px solid rgba(74,222,128,0.4); }
+.hoshi-lose { background: rgba(248,113,113,0.15); color: #f87171; border: 1px solid rgba(248,113,113,0.4); }
+.hoshi-rest { background: rgba(90,122,154,0.15); color: #6a8aad; border: 1px solid rgba(90,122,154,0.3); }
