@@ -6,7 +6,7 @@ export const profile = {
   shikona: "霧島鐵力",
   shikonaRuby: "きりしまてつお",        // 修正済み（旧: きりしまてつゆき）
   shikonaEn: "Kirishima Tetsuo",        // 修正済み（旧: Tetsuyuki）
-  realName: "（要確認）",               // 要修正：モンゴル語本名の正確な表記は未確認
+  realName: "ビャンブチュルン・ハグワスレン", // 確認済み（ユーザー提供情報）
   birthDate: "1996年7月4日",
   age: 29,
   birthPlace: "モンゴル国ウランバートル市",

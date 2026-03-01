@@ -80,7 +80,7 @@ export default function Profile() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
             <div>
               <h3 className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#d4a017" }}>基本情報</h3>
-              <InfoRow label="本名" value={profile.realName} status="needs_correction" />
+              <InfoRow label="本名" value={profile.realName} status="verified" />
               <InfoRow label="生年月日" value={`${profile.birthDate}（${profile.age}歳）`} status="unconfirmed" />
               <InfoRow label="出身地" value={profile.birthPlace} status="unconfirmed" />
               <InfoRow label="国籍" value={profile.nationality} />
