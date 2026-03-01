@@ -1,10 +1,12 @@
 // 霧島鐵力 データファイル（2026年3月場所直前）
+// ⚠ このファイルにはモックデータ・未確認情報が含まれます。
+// 各フィールドの検証状況は src/data/accuracy.ts を参照してください。
 
 export const profile = {
   shikona: "霧島鐵力",
-  shikonaRuby: "きりしまてつゆき",
-  shikonaEn: "Kirishima Tetsuyuki",
-  realName: "エンフ=エルデネ・オトゴンバータル",
+  shikonaRuby: "きりしまてつお",        // 修正済み（旧: きりしまてつゆき）
+  shikonaEn: "Kirishima Tetsuo",        // 修正済み（旧: Tetsuyuki）
+  realName: "（要確認）",               // 要修正：モンゴル語本名の正確な表記は未確認
   birthDate: "1996年7月4日",
   age: 29,
   birthPlace: "モンゴル国ウランバートル市",

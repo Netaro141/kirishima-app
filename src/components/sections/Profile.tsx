@@ -1,13 +1,29 @@
 "use client";
 
 import { profile } from "@/data/kirishima";
+import { statusConfig, type DataStatus } from "@/data/accuracy";
 
-function InfoRow({ label, value }: { label: string; value: string }) {
+function StatusBadge({ status }: { status: DataStatus }) {
+  const cfg = statusConfig[status];
+  return (
+    <span
+      className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-bold flex-shrink-0"
+      style={{ background: cfg.bg, color: cfg.color, border: `1px solid ${cfg.border}` }}
+    >
+      {cfg.icon}
+    </span>
+  );
+}
+
+function InfoRow({ label, value, status }: { label: string; value: string; status?: DataStatus }) {
   return (
     <div className="flex items-start gap-4 py-3 border-b last:border-0"
       style={{ borderColor: "#0f3060" }}>
       <div className="w-28 text-sm flex-shrink-0" style={{ color: "#3a5a7a" }}>{label}</div>
-      <div className="text-sm flex-1" style={{ color: "#c0d8f0" }}>{value}</div>
+      <div className="text-sm flex-1 flex items-center gap-2" style={{ color: "#c0d8f0" }}>
+        <span>{value}</span>
+        {status && <StatusBadge status={status} />}
+      </div>
     </div>
   );
 }
@@ -44,7 +60,10 @@ export default function Profile() {
             </div>
             <div className="pb-1">
               <div className="text-3xl font-black" style={{ color: "#e8dfc8" }}>{profile.shikona}</div>
-              <p className="text-sm mt-0.5" style={{ color: "#6a8aad" }}>{profile.shikonaRuby} / {profile.shikonaEn}</p>
+              <p className="text-sm mt-0.5 flex items-center gap-2" style={{ color: "#6a8aad" }}>
+                <span>{profile.shikonaRuby} / {profile.shikonaEn}</span>
+                <StatusBadge status="verified" />
+              </p>
               <div className="flex gap-2 mt-2">
                 <span className="px-3 py-0.5 rounded-full text-xs font-bold"
                   style={{ background: "rgba(212,160,23,0.2)", color: "#f0c840", border: "1px solid rgba(212,160,23,0.4)" }}>
@@ -61,20 +80,20 @@ export default function Profile() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
             <div>
               <h3 className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#d4a017" }}>基本情報</h3>
-              <InfoRow label="本名" value={profile.realName} />
-              <InfoRow label="生年月日" value={`${profile.birthDate}（${profile.age}歳）`} />
-              <InfoRow label="出身地" value={profile.birthPlace} />
+              <InfoRow label="本名" value={profile.realName} status="needs_correction" />
+              <InfoRow label="生年月日" value={`${profile.birthDate}（${profile.age}歳）`} status="unconfirmed" />
+              <InfoRow label="出身地" value={profile.birthPlace} status="unconfirmed" />
               <InfoRow label="国籍" value={profile.nationality} />
-              <InfoRow label="所属部屋" value={profile.stable} />
+              <InfoRow label="所属部屋" value={profile.stable} status="verified" />
               <InfoRow label="師匠" value={profile.stablemaster} />
             </div>
             <div>
               <h3 className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#d4a017" }}>力士データ</h3>
-              <InfoRow label="身長" value={profile.height} />
-              <InfoRow label="体重" value={profile.weight} />
+              <InfoRow label="身長" value={profile.height} status="unconfirmed" />
+              <InfoRow label="体重" value={profile.weight} status="unconfirmed" />
               <InfoRow label="最高位" value={profile.highestRank} />
-              <InfoRow label="現在の地位" value={profile.currentRank} />
-              <InfoRow label="初土俵" value={profile.debut} />
+              <InfoRow label="現在の地位" value={profile.currentRank} status="verified" />
+              <InfoRow label="初土俵" value={profile.debut} status="unconfirmed" />
               <InfoRow label="大関昇進" value={profile.ozekiPromotion} />
             </div>
           </div>

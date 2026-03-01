@@ -10,10 +10,11 @@ import LatestNews from "@/components/sections/LatestNews";
 import PromotionTracker from "@/components/sections/PromotionTracker";
 import FamousBouts from "@/components/sections/FamousBouts";
 import StableNews from "@/components/sections/StableNews";
+import DataAccuracy from "@/components/sections/DataAccuracy";
 
 type Section =
   | "dashboard" | "profile" | "winloss" | "kimarite"
-  | "news" | "promotion" | "gallery" | "stable";
+  | "news" | "promotion" | "gallery" | "stable" | "accuracy";
 
 const sectionLabels: Record<Section, string> = {
   dashboard: "ダッシュボード",
@@ -24,6 +25,7 @@ const sectionLabels: Record<Section, string> = {
   promotion: "昇進トラッカー",
   gallery: "名勝負ギャラリー",
   stable: "音羽山通信",
+  accuracy: "データ精査",
 };
 
 function HamburgerIcon() {
@@ -64,6 +66,7 @@ export default function Home() {
       case "promotion":  return <PromotionTracker />;
       case "gallery":    return <FamousBouts />;
       case "stable":     return <StableNews />;
+      case "accuracy":   return <DataAccuracy />;
     }
   }
 

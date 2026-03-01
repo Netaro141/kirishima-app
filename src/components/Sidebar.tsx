@@ -16,6 +16,7 @@ const navItems: NavItem[] = [
   { id: "promotion",  label: "昇進トラッカー",   kanji: "昇", sub: "大関復帰進捗" },
   { id: "gallery",    label: "名勝負ギャラリー", kanji: "勝", sub: "印象的な一番" },
   { id: "stable",     label: "音羽山通信",       kanji: "部", sub: "部屋の日常" },
+  { id: "accuracy",   label: "データ精査",       kanji: "査", sub: "情報の検証状況" },
 ];
 
 interface SidebarProps {
