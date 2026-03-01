@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { profile } from "@/data/kirishima";
 import { statusConfig, type DataStatus } from "@/data/accuracy";
 
@@ -49,14 +50,24 @@ export default function Profile() {
 
         {/* アバター + 名前 */}
         <div className="px-8 pb-8 -mt-10 relative">
-          <div className="flex items-end gap-6 mb-6">
-            <div className="w-20 h-20 rounded-2xl flex items-center justify-center shadow-2xl flex-shrink-0"
+          <div className="flex items-start gap-6 mb-6">
+            <div className="flex-shrink-0 relative"
               style={{
-                background: "linear-gradient(135deg, #d4a017 0%, #8b6914 60%, #f0c840 100%)",
-                border: "4px solid #071a35",
+                width: 80, height: 140,
+                borderRadius: "12px",
+                border: "3px solid #d4a017",
                 boxShadow: "0 0 20px rgba(212,160,23,0.4)",
+                overflow: "hidden",
+                background: "#071a35",
               }}>
-              <span className="text-3xl font-black text-black select-none">霧</span>
+              <Image
+                src="https://www.sumo.or.jp/img/sumo_data/rikishi/270x474/20150034.jpg"
+                alt="霧島鐵力 公式プロフィール写真"
+                fill
+                style={{ objectFit: "cover", objectPosition: "top" }}
+                sizes="80px"
+                priority
+              />
             </div>
             <div className="pb-1">
               <div className="text-3xl font-black" style={{ color: "#e8dfc8" }}>{profile.shikona}</div>
@@ -81,19 +92,19 @@ export default function Profile() {
             <div>
               <h3 className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#d4a017" }}>基本情報</h3>
               <InfoRow label="本名" value={profile.realName} status="verified" />
-              <InfoRow label="生年月日" value={`${profile.birthDate}（${profile.age}歳）`} status="unconfirmed" />
-              <InfoRow label="出身地" value={profile.birthPlace} status="unconfirmed" />
+              <InfoRow label="生年月日" value={`${profile.birthDate}（${profile.age}歳）`} status="verified" />
+              <InfoRow label="出身地" value={profile.birthPlace} status="verified" />
               <InfoRow label="国籍" value={profile.nationality} />
               <InfoRow label="所属部屋" value={profile.stable} status="verified" />
               <InfoRow label="師匠" value={profile.stablemaster} />
             </div>
             <div>
               <h3 className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#d4a017" }}>力士データ</h3>
-              <InfoRow label="身長" value={profile.height} status="unconfirmed" />
-              <InfoRow label="体重" value={profile.weight} status="unconfirmed" />
+              <InfoRow label="身長" value={profile.height} status="verified" />
+              <InfoRow label="体重" value={profile.weight} status="verified" />
               <InfoRow label="最高位" value={profile.highestRank} />
               <InfoRow label="現在の地位" value={profile.currentRank} status="verified" />
-              <InfoRow label="初土俵" value={profile.debut} status="unconfirmed" />
+              <InfoRow label="初土俵" value={profile.debut} status="verified" />
               <InfoRow label="大関昇進" value={profile.ozekiPromotion} />
             </div>
           </div>
@@ -122,8 +133,8 @@ export default function Profile() {
           <h3 className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: "#d4a017" }}>フィジカルデータ</h3>
           <div className="space-y-5">
             {[
-              { label: "身長", value: "187cm", max: 210, current: 187, color: "#6a8aad" },
-              { label: "体重", value: "157kg", max: 200, current: 157, color: "#d4a017" },
+              { label: "身長", value: "186cm", max: 210, current: 186, color: "#6a8aad" },
+              { label: "体重", value: "149kg", max: 200, current: 149, color: "#d4a017" },
             ].map(({ label, value, max, current, color }) => (
               <div key={label}>
                 <div className="flex justify-between mb-2">

@@ -6,18 +6,18 @@ export const profile = {
   shikona: "霧島鐵力",
   shikonaRuby: "きりしまてつお",        // 修正済み（旧: きりしまてつゆき）
   shikonaEn: "Kirishima Tetsuo",        // 修正済み（旧: Tetsuyuki）
-  realName: "ビャンブチュルン・ハグワスレン", // 確認済み（ユーザー提供情報）
-  birthDate: "1996年7月4日",
+  realName: "ビャンブチュルン・ハグワスレン", // 確認済み（公式サイト）
+  birthDate: "1996年4月24日",               // 確認済み（公式サイト）
   age: 29,
-  birthPlace: "モンゴル国ウランバートル市",
+  birthPlace: "モンゴル・ドルノドゥ",        // 確認済み（公式サイト）
   nationality: "モンゴル",
   stable: "音羽山部屋",
   stablemaster: "音羽山親方（元横綱・霧島）",
-  height: "187cm",
-  weight: "157kg",
+  height: "186cm",                          // 確認済み（公式サイト: 186.0cm）
+  weight: "149kg",                          // 確認済み（公式サイト: 149.0kg）
   highestRank: "大関",
   currentRank: "東関脇",
-  debut: "2014年1月場所",
+  debut: "2015年5月場所",                   // 確認済み（公式サイト: 平成27年5月場所）
   ozekiPromotion: "2023年7月場所",
   style: "技巧派。左四つからの投げ技を得意とし、多彩な決まり手で相手を翻弄する。近年は組み止めた後の鋭い投げが復活し、大関時代の輝きが戻りつつある。",
   specialMoves: ["上手投げ", "下手投げ", "寄り切り", "押し出し", "掬い投げ"],
